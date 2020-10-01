@@ -1,0 +1,63 @@
+﻿@model Calculator.Models.CalculatorModel
+
+@{ViewData["Title"] = "Calculator";
+}
+
+
+    <html>
+    <body>
+        <header>
+            <div>
+                <h2>A Calculator</h2>
+            </div>
+        </header>
+
+       
+        <fieldset>
+            <div class="row">
+                <div class="col-6">
+                    @using (Html.BeginForm("CalculatorView", "Calculator", FormMethod.Post))
+                    {
+
+                        <div>
+                            <label for="Input1">Input 1</label>
+                            @Html.TextBoxFor(model => model.Input1)
+                        </div>
+
+                        <div>
+                            <label for="Input2">Input 2</label>
+                            @Html.TextBoxFor(model => model.Input2)
+                        </div>
+
+                        <button type="submit" name="calc" value="+">+</button>
+            <button type="submit" name="calc" value="-">-</button>
+            <button type="submit" name="calc" value="*">*</button>
+            <button type="submit" name="calc" value="/">/</button>
+
+                        @*<input type="submit" name="calc" value="+" />
+                        <input type="submit" name="calc" value="-" />
+                        <input type="submit" name="calc" value="*" />
+                        <input type="submit" name="calc" value="/" />*@
+
+                        <div>
+                            <label for="Result">Result</label>
+                            @Html.DisplayFor(model => model.Result)
+                        </div>
+
+
+
+                    }
+                </div>
+
+                <div class="col-6">
+                    <img src="~/img/Skærmbillede 2020-10-01 103738.png" alt="Calculator Image" />
+                </div>
+
+
+            </div>
+           
+        </fieldset>
+
+
+    </body>
+</html>
